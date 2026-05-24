@@ -28,7 +28,7 @@ The three inputs in the above equation are defined as follows.
 
 **Ambient heat exchange**
 
-$$x_{1,t} = T_{a,t} - Y_t \tag{2}$$
+$$x_{1,t} = T_{a,t} - Y_t $$
 
 where $T_{a,t}$ is the ambient outside air temperature.
 
@@ -52,7 +52,7 @@ $$S(\boldsymbol{\theta}) = (\mathbf{Y} - \mathbf{X}\boldsymbol{\theta})^\top (\m
 
 using the SLSQP solver in SciPy with a tolerance of $\varepsilon = 10^{-5}$ and a maximum of $10^4$ iterations. For fixed nonlinear parameters, the linear parameters $\boldsymbol{\theta}_{\text{lin}} = [\phi_1,\, \beta_1,\, \beta_2,\, \beta_3]^\top$ are obtained analytically from the normal equations
 
-$$\hat{\boldsymbol{\theta}}_{\text{lin}} = (\mathbf{X}^\top \mathbf{X})^{-1} \mathbf{X}^\top \mathbf{Y} \tag{6}$$
+$$\hat{\boldsymbol{\theta}}_{\text{lin}} = (\mathbf{X}^\top \mathbf{X})^{-1} \mathbf{X}^\top \mathbf{Y} $$
 
 where $\mathbf{X}$ is the design matrix.
 ## Parameters
