@@ -24,7 +24,7 @@ $$Y_t = \phi_1 Y_{t-1} + \sum_{i=1}^{3} \beta_i x_{i,t-1} + \varepsilon_t $$
 
 where $\phi_1$ is the autoregressive coefficient, $\beta_i$ are linear parameters multiplying the $i$-th input, and $\varepsilon_t \sim \mathcal{N}(0, \sigma^2)$ is an i.i.d. white noise process.
 
-The three inputs in Eq. (1) are defined as follows.
+The three inputs in the above equation are defined as follows.
 
 **Ambient heat exchange**
 
@@ -34,13 +34,13 @@ where $T_{a,t}$ is the ambient outside air temperature.
 
 **Thermostatic valve — sigmoid function**
 
-$$x_{2,t} = \frac{T_{f,t} - Y_t}{1 + \exp\!\bigl(-\alpha_1(T_{\text{set},t} + \alpha_2 - Y_t)\bigr)} \tag{3}$$
+$$x_{2,t} = \frac{T_{f,t} - Y_t}{1 + \exp\!\bigl(-\alpha_1(T_{\text{set},t} + \alpha_2 - Y_t)\bigr)}$$
 
 where $T_{f,t}$ is the forward temperature of the hot water entering the radiator, $T_{\text{set},t}$ is the temperature setpoint, and $\alpha_1$, $\alpha_2$ are the nonlinear parameters governing the slope and offset of the valve response.
 
 **Solar gain — B-spline decomposition**
 
-$$x_{3,t} = P_{s,t} \sum_{i=1}^{M} \eta_i B_{i,k}(t) \tag{4}$$
+$$x_{3,t} = P_{s,t} \sum_{i=1}^{M} \eta_i B_{i,k}(t) $$
 
 where $P_{s,t}$ is the measured solar power, $\eta_i$ are the scaling coefficients of the $i$-th B-spline basis function, and $B_{i,k}$ is the de Boor B-spline of order $k$ defined on a 24-hour knot grid.
 
@@ -48,7 +48,7 @@ where $P_{s,t}$ is the measured solar power, $\eta_i$ are the scaling coefficien
 
 The nonlinear parameters $\boldsymbol{\theta}_{\text{nl}} = [\alpha_1,\, \alpha_2,\, \eta_1, \ldots, \eta_M]^\top$ are estimated by minimising the sum of squared errors
 
-$$S(\boldsymbol{\theta}) = (\mathbf{Y} - \mathbf{X}\boldsymbol{\theta})^\top (\mathbf{Y} - \mathbf{X}\boldsymbol{\theta}) \tag{5}$$
+$$S(\boldsymbol{\theta}) = (\mathbf{Y} - \mathbf{X}\boldsymbol{\theta})^\top (\mathbf{Y} - \mathbf{X}\boldsymbol{\theta}) $$
 
 using the SLSQP solver in SciPy with a tolerance of $\varepsilon = 10^{-5}$ and a maximum of $10^4$ iterations. For fixed nonlinear parameters, the linear parameters $\boldsymbol{\theta}_{\text{lin}} = [\phi_1,\, \beta_1,\, \beta_2,\, \beta_3]^\top$ are obtained analytically from the normal equations
 
