@@ -20,7 +20,7 @@ Measurements are sampled every 30 minutes (1294 observations) from 2021-03-01 to
 
 The M4 model for the indoor temperature prediction $Y_t$ at time $t$ is
 
-$$Y_t = \phi_1 Y_{t-1} + \sum_{i=1}^{3} \beta_i x_{i,t-1} + \varepsilon_t \tag{1}$$
+$$Y_t = \phi_1 Y_{t-1} + \sum_{i=1}^{3} \beta_i x_{i,t-1} + \varepsilon_t $$
 
 where $\phi_1$ is the autoregressive coefficient, $\beta_i$ are linear parameters multiplying the $i$-th input, and $\varepsilon_t \sim \mathcal{N}(0, \sigma^2)$ is an i.i.d. white noise process.
 
